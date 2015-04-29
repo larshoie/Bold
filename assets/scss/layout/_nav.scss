@@ -1,0 +1,88 @@
+.modal {
+  display: block;
+  position: absolute;
+  top: 10vw;
+  left: 10%;
+  right: 10%;
+  height: auto;
+  //min-height: 60%;
+  background: orange;
+  z-index: $topp;
+  overflow: scroll;
+  margin-top: 2rem;
+        ul {margin-top: -1.1rem;}
+        li {margin-bottom: 1.3rem;}
+      //li {width: 80%; margin:0 10%;}
+
+        @include breakpoint($nettbrett) {
+        top: 10vw;
+        margin: 0 auto;
+        //margin-bottom: 6rem!important;
+        max-width: 24rem;
+        //height: auto;
+        //column-count:2;
+        //column-gap:2rem;
+        }
+}
+
+
+/* ==|====================
+   Layout/Nav
+   ======================= */
+
+li {
+  list-style: none;
+}
+
+body header {
+  //text-transform: uppercase;
+}
+
+body>header {
+  //background: #fff;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0; //40% hvis midt på vertikalt...
+  z-index: 10;
+  padding: 1rem 2rem;//10vw;
+      @include breakpoint($skjerm) {
+      padding:1rem 3.3vw;
+      }
+      @include breakpoint($stor-skjerm) {
+      padding:1rem 5.5vw;
+      //padding: 1rem calc(50% - 530px);
+      }
+}
+
+.skjulmobil {
+  display: none;
+      @include breakpoint($nettbrett) {
+      display: inline;
+      top: 0rem;
+      left: 0.2rem;
+      }
+}
+
+.logo {
+  float: left;
+  top: 1rem;
+  left: 0;
+  vertical-align: baseline;
+    @include breakpoint($nettbrett) {
+      float: left;
+    }
+
+}
+
+.menu {
+  float: right;
+  text-align: left;
+  width: 9.45rem;
+}
+
+.current {
+  text-decoration: underline;
+  display: inline;
+  //border-bottom: 0.18rem solid;
+}

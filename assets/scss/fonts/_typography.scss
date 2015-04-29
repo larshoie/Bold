@@ -1,0 +1,29 @@
+/* ===========================
+   Base
+   =========================== */
+@font-face {
+    font-family: 'Circular';
+    src: url('fonts/circular/Circular-Bold.eot?') format('eot'), 
+         url('fonts/circular/Circular-Bold.otf')  format('opentype'),
+         url('fonts/circular/Circular-Bold.woff') format('woff'), 
+         url('fonts/circular/Circular-Bold.ttf')  format('truetype'),
+         url('fonts/circular/Circular-Bold.svg#Circular/Circular-Bold') format('svg');
+}
+
+h3 {
+	font-size: 1rem;//18px;
+	font-weight: normal;
+	display: table;
+	padding-bottom: 0px;
+	border-bottom: 3px solid #000;
+	margin-bottom: 6rem;
+	margin-top: 0;
+}
+
+.gjennomstreket {
+  text-decoration: line-through;
+}
+
+ol li {
+  list-style-type: decimal;
+}

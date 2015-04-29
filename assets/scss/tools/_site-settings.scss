@@ -1,0 +1,140 @@
+@charset "UTF-8";
+
+// ----------------------
+// == Site settings
+// ----------------------
+
+// Html 5 Element
+$audio-canvas-video: false; // True | False
+
+// Fonts
+$font1: "Circular", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font2: "Adobe Caslon Pro", Georgia, serif;
+
+// = Colors
+// -----------------------------
+
+$black: #000000;
+$red: rgb(204, 0, 21);
+$blue: #2F3787;
+$dick: #0022dd;
+$pink: #C4007A;
+$facebook: #3b5998;
+$twitter: #43bfe1;
+
+$color1: $black;
+$color2: $blue;
+
+// Text
+$color-text-base: #212121;
+
+// link
+$color-link: $color1;
+$color-link-hover: lighten($color1, 0%);
+
+// Mixin Placeholder
+$color-mixin-placeholder: #cdcdcd;
+
+// Selection
+$color-selection: $color1;
+
+// = Grid
+// -----------------------------
+
+// Max width wrapper
+$wrapper-width: pxtoem(1140, 16);
+
+// = Prefix
+// -----------------------------
+
+$prefix-for-webkit:    true !default;
+$prefix-for-mozilla:   true !default;
+$prefix-for-microsoft: true !default;
+$prefix-for-opera:     true !default;
+$prefix-for-spec:      true !default; // required for keyframe mixin
+
+
+
+// = Responsivt
+// -----------------------------
+$nettbrett: 600px;
+$skjerm: 960px;
+$stor-skjerm: 1140px;
+
+
+
+
+
+// GAMMELT
+
+// Variabler //                                   
+
+// Grid
+$gutter_width: 30px; // Your gutter width
+$columns: 12; // The amount of columns you want
+$max_width: 1200px; // Set a maximum width of the site
+
+// Baseline
+// 100% for 16px font and 24px baseline.
+// 75% for 12px font and 18px baseline.
+$baseline: 100%;
+
+// Typografi
+// $hovedfont: "Circular", "Helvetica Neue", Helvetica, Arial, Sans-Serif;
+// $kontrastfont: "F37 Bella", "Helvetica Neue", Helvetica, Arial, Sans-Serif;
+$body_family: "Circular", "Helvetica Neue", Helvetica, Arial, Sans-Serif;
+$heading_family: "Circular", "Helvetica Neue", Helvetica, Arial, Sans-Serif;
+
+// Font colors
+$body_color:#000;
+$heading_color: $body_color;
+
+// Link colors
+$link: $body_color;
+$link_hover: #000;
+
+// Select colors
+$select: $body_color;
+$select_color: $body_color;
+
+// The micro clearfix http://nicolasgallagher.com/micro-clearfix-hack
+@mixin clearfix(){
+	*zoom:1;
+
+	&:before,
+	&:after{
+	    content:"";
+	    display:table;
+	}
+	&:after{
+	    clear:both;
+	}
+}
+
+//Layers
+
+$bilde-under: 1;
+$bilde: 2;
+$subhead: 3;
+$tekst: 4;
+$topp: 5;
+
+div {	
+	display: block;
+}
+
+* {
+	position:relative;
+	box-sizing:border-box;
+	z-index:$tekst;
+}
+
+img {
+	z-index:$bilde;
+	display: block;
+}
+
+header {
+	z-index:$topp;
+}
+

@@ -1,0 +1,255 @@
+/*
+ * SMACSS + SCSS starter v2.0
+ * Inspired by SMACSS http://smacss.com
+ * Author: @jonathanpath
+ * Date: 11 July 2013
+ *
+ * https://github.com/jonathanpath/SASS-SMACSS
+ * See file structure in http://jonathanpath.com/sass+smacss/scss/style.scss
+ * Sass Structure inspired by : https://github.com/sutter/POPY-starter-HTML-SCSS
+ *
+ * Coding rules : https://github.com/necolas/idiomatic-css
+ *
+ */
+
+/* Compass */
+//@import "compass/css3/images";
+
+/* Tools */
+@import "tools/breakpoint";
+@import "tools/site-settings";
+@import "tools/mixins";
+//@import "tools/functions";
+//@import "tools/helpers";
+
+/* Base */
+@import "base/normalize";
+@import "base/base";
+//@import "base/form";
+
+/* Fonts */
+@import "fonts/typography";
+
+/* Layout */
+@import "layout/grid";
+@import "layout/header";
+@import "layout/nav";
+@import "layout/main";
+@import "layout/artikkel";
+@import "layout/footer";
+//@import "layout/constrained";
+
+/* Modules */
+@import "modules/quotes";
+@import "modules/slider";
+@import "modules/animations";
+//@import "modules/transition";
+//@import "modules/icons";
+
+
+
+
+
+header {
+  //display:none;
+}
+
+nav.main {
+  position:fixed;
+  //left:0;
+  right:0;
+  top:0;
+  bottom:0;
+  height:100vh;
+  width: 10vw;
+  //background: #ddd;
+  z-index:999;
+  //transform:rotate(-90deg);
+  //transform-origin:right top;
+  -webkit-writing-mode: vertical-lr;
+  text-align:center;
+
+    ul {
+      position:relative;
+      padding:3vw;
+
+      li {
+        list-style:none;
+      }
+
+      :first-child {
+        //float:left;
+        display:none;
+      }
+
+      :last-child {
+        //float:right;
+        display:none;
+      }
+    }
+  }
+
+.menylink {
+  //float:left;
+  //margin:auto;
+  display:block!important;
+  position:fixed;
+  top:0;
+  height:100vh;
+  right:2rem;
+  z-index:666;
+  -webkit-writing-mode: vertical-lr;
+  text-align:center;
+  font-size:1.5rem;
+  color: $blue;
+}
+
+.meta {
+  display:block!important;
+  position:fixed;
+  top:4vh;
+  right:2rem;
+  z-index:999;
+  -webkit-writing-mode: vertical-lr;
+  font-size:1.5rem;
+  color: $blue;
+}
+
+
+input[type=checkbox]:checked ~ .slideout {
+    //opacity:1;
+    right:0;
+}
+
+input[type=checkbox] {
+   position: absolute;
+   top: -9999px;
+   left: -9999px;
+   /* For mobile, it's typically better to position checkbox on top of clickable
+      area and turn opacity to 0 instead. */
+}
+
+.slideout {
+  position:fixed;
+  height:100vh;
+  width:50vw;
+  z-index:99;
+  padding: 2rem;
+  margin:0;
+  top:0;
+  background:#fff;
+  text-align:center;
+    //opacity:0;
+    right:-50vw;
+    transition:right 0.15s;
+
+    li {
+    list-style:none;
+    padding:0;
+    margin:0;
+    a {
+      font-size: 4vw;
+      height:17vh;
+      display:block;
+    }
+  }
+}
+
+li a:hover iframe {
+  opacity:1;
+  display:none;
+}
+
+li a:hover .page-index {
+  opacity:0;
+}
+
+.page-index {
+  opacity:0;
+  height:16vh;
+  margin-top:-16vh;
+  width:100vw;
+  //background: yellow;
+  position:fixed;
+  left:0;
+  z-index:33;
+  pointer-events: none;
+  overflow:hidden;
+  ul {
+    }
+  li {
+    height:auto;
+    width:100%;
+    img {
+      width:auto;
+      width:20%;
+      float:left;
+    }
+  }
+}
+
+
+
+
+
+iframe {
+  display:none;
+  opacity:0;
+  width:100%;
+  height:100%;
+  position:fixed;
+  top:0;
+  left:0;
+  z-index:55;
+  pointer-events: none;
+}
+
+
+
+
+/* svg {
+  display:inline;
+
+}
+svg > * {
+  position: absolute!important;
+  display:inline;
+  //opacity:0;
+  //display:block;
+} */
+
+path {
+  display: block;
+  position: relative;
+  float:left;
+}
+
+
+
+
+.svg-lag {
+  //width:100vmin;
+  //height:100vmin;
+  display:block;
+  position: absolute;
+  top:10vmin;
+  left:10vmin;
+  bottom:10vmin;
+  right:10vmin;
+}
+
+.svg-lag svg {
+  position: absolute;
+  top:0;
+  z-index:9999;
+}
+
+.editorial {
+  margin-top:100vh;
+}
+
+
+.sperm {
+  //transform: rotate(180deg);
+  //transform-origin: center center;
+}

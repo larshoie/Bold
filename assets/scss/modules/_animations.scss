@@ -1,0 +1,83 @@
+/* ==|================
+   Module/Keyframes
+   =================== */
+
+
+/* //TEST FOR FORSIDEN
+ @keyframes sperm {
+  0%   { transform:matrix(1, 0, 0, 1, 0, 0); }
+  100% { transform:matrix(1, 0, 1, 1, 0, 0); 
+    //transform-origin: 60% 60%;
+}
+}
+
+#sperm-3 {
+    //animation: sperm 2s infinite;
+    transform: rotate(0deg) scaleX(1) scaleY(1) ;
+    width: 100px; height: 100px;
+} */
+
+// MENY-ANIMASJON
+.slide {
+    transition: all .5s linear
+}
+
+.slide--reset {
+    transform: translateY(0)
+}
+
+.slide--up {
+    transform: translateY(-30em)
+}
+
+.slide--down {
+    transform: translateY(30em)
+}
+
+
+
+.animated {
+    -webkit-animation-duration: .5s;
+    -moz-animation-duration: .5s;
+    -o-animation-duration: .5s;
+    animation-duration: .5s;
+    -webkit-animation-fill-mode: both;
+    -moz-animation-fill-mode: both;
+    -o-animation-fill-mode: both;
+    animation-fill-mode: both
+}
+
+
+@keyframes slideDown {
+    0% {
+        transform: translateY(-30em)
+    }
+
+    100% {
+        transform: translateY(0)
+    }
+}
+
+.animated.slideDown {
+    -webkit-animation-name: slideDown;
+    -moz-animation-name: slideDown;
+    -o-animation-name: slideDown;
+    animation-name: slideDown
+}
+
+@keyframes slideUp {
+    0% {
+        transform: translateY(0)
+    }
+
+    100% {
+        transform: translateY(-30em)
+    }
+}
+
+.animated.slideUp {
+    -webkit-animation-name: slideUp;
+    -moz-animation-name: slideUp;
+    -o-animation-name: slideUp;
+    animation-name: slideUp
+}

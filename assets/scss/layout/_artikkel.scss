@@ -1,0 +1,845 @@
+/* ==|====================
+   Layout/Forside
+   ======================= */
+
+a:hover {color: #ccc;}
+
+.jscroll-inner {
+   overflow-x: hidden!important;
+   //padding: 0 10vw!important;
+}
+
+nav {display: block;}
+
+header {
+	height: auto;
+		@include breakpoint ($stor-skjerm) {
+		padding: 0 5vw;
+		}
+}
+
+section {
+	width: 100%;
+	height: auto;
+}
+
+section img {
+//pointer-events:none;
+}
+
+%toppmargin {
+	padding-top:7rem!important; //7rem
+}
+
+.left, .right {display: block;}
+
+.left {	float: none; padding-bottom: 1rem; text-align: center;
+		@include breakpoint($nettbrett) {
+		float: left;
+		text-align: left;
+	}
+}
+.right {float: none; padding-bottom: 1rem; text-align: center;
+		@include breakpoint($nettbrett) {
+		float: right;
+		text-align: left;
+	}
+}
+
+//.light {color: #ccc;}
+
+.forside {
+	background: #bbb;
+	color: $blue;
+	width: 100vw;
+	overflow: hidden;
+
+		ul {
+		margin-bottom: 6rem;
+		}
+
+		svg {
+			padding: 0;
+			margin: -4vw!important;
+			width: 130%;
+			@include breakpoint($skjerm) {
+				width:70%;
+				left:24%;
+			}
+
+		}
+
+		p {
+			padding-top: 1.2rem;
+			@include breakpoint($nettbrett) {
+				columns: 2;
+				min-width: 600px;
+			}
+			@include breakpoint($skjerm) {
+			@include push(2);
+			padding-top: 0rem;
+			}
+		}
+
+		strong {
+			display: block;
+			width: 300px;
+			padding-right: 2rem;
+			@include breakpoint($skjerm) {
+				@include push(2);
+				width: 600px;
+				margin-bottom: -1.5rem;
+			}
+		}
+
+		strong p {
+		display: inline;
+		margin-left: 0rem;
+				font-size: 1.6rem;
+				border-bottom: 0.2rem solid;
+			@include breakpoint($nettbrett) {
+				font-size: 2rem;
+				border-bottom: 0.3rem solid;
+			}
+		}
+
+		h2 {
+			font-family: $font2;
+			font-size: 3.5rem;
+			position: static;
+			opacity: 1;
+			display: inline;
+			line-height: 2.3; //3.3;
+			border-bottom: 0.3rem solid;
+				@include breakpoint($nettbrett) {
+				font-size: 6rem;
+				border-bottom: 0.45rem solid;
+				line-height: 3.3;
+				}
+				@include breakpoint($skjerm) {
+				@include push(1);
+				}
+		}
+}
+
+.cover {width: 100%;}
+
+article {
+	@extend %toppmargin;
+	position: relative;
+		@include breakpoint ($stor-skjerm) {
+		padding: 5vw;
+		//max-width: 1300px;
+		margin: 0 auto;
+		}
+	}
+
+aside {
+	background: #fff;
+	//position: static!important;
+	//height: 5rem;
+	padding: 2rem 2rem 3rem 2rem;
+	@include breakpoint ($stor-skjerm) {
+	padding: 2rem 5vw 3rem 5vw;
+	}
+}
+
+footer {
+font-size: 0.7rem;
+color: #ccc;
+background: #eee;
+text-align: center;
+margin: 0 auto;
+font-weight: normal;
+//font-family: $font2;
+//background: #eee;
+//padding-top: 2rem;
+	@include breakpoint ($nettbrett) {
+		text-align: left;
+		padding: 0rem 2rem 3rem 2rem;
+	}
+	@include breakpoint ($stor-skjerm) {
+	padding: 0rem 5vw 3rem 5vw;
+	}
+	hr {
+		display: block;
+		height: 1px;
+		border:2rem;
+		border-top: 1px solid #ccc;
+		margin: 0rem 0rem -2rem!important;
+		padding: 2rem!important;
+	}
+	a 	{color: #ccc; float: left; padding-right: 0.5rem;
+		&:hover {text-decoration: underline;}
+	}
+	p 	{padding-top: 1rem; margin: 0 auto -2.4rem;}
+	ul 	{margin-top: 0rem; margin: 0 auto; width: 320px; padding:2rem; overflow: hidden;
+	@include breakpoint ($nettbrett) {
+		text-align: left;
+		margin-top: -1rem;
+		padding-left: 0.5rem;
+		}
+	}
+	li 	{}
+}
+
+svg {
+	height: 100%;
+	width: 100%;
+	pointer-events: none;
+}
+
+
+
+
+/* ==|====================
+   Layout/Artikkel
+   ======================= */
+
+//felles
+
+.ingress {
+	font-size: 1.6rem;
+	font-size: 7vw;
+	font-family: $font2;
+	font-weight: 900;
+	height: auto;
+	//margin-top: -40vw;
+	//margin-top: -20vw;
+	//margin-bottom: -10vw;
+	margin-top: -5vw;
+	margin-bottom: -15vw;
+	font-feature-settings: "liga", "dlig";
+	//hyphens: auto;
+	display: block!important;
+}
+
+.ingress p {
+border-bottom: 0.65vw solid;
+display: inline;
+		@include breakpoint ($skjerm) {
+		border-bottom: 0.55vw solid;
+		}
+		@include breakpoint ($stor-skjerm) {
+		border-bottom: 0.45vw solid;
+		}
+}
+
+h2 {
+	position: absolute;
+	font-size: 20vw;
+	font-size: 16vw;
+	font-size: 9rem;
+	overflow: hidden;
+	//width: 85vw;
+	opacity: 0.3;
+}
+
+p:first-of-type {text-indent: 0;}
+
+p {
+	//hyphens: auto;
+	max-width: 20rem;
+	text-indent: 2rem;
+	margin-top: -1.1rem;
+	margin-left: 0;
+}
+
+.teaser {
+	z-index: $bilde;
+	//padding: 2rem;
+	article {bottom: 1rem; left: -1rem; z-index: $tekst;}
+	h1 {}
+	img {width: 100%;}
+}
+
+
+/* ==|====================
+   INEQUALITY FOR ALL
+   ======================= */
+
+.inequality {
+	background-color: $red;
+	overflow: hidden;
+	height: auto;
+	//overflow-x: hidden;
+	//width: 300px;
+
+	p {
+		@include breakpoint ($skjerm) {
+		margin-left: 50vw;
+		}
+	}
+
+	img {width: 50%;}
+
+	h2.utenparent {
+		left: 59vw;
+   		margin-top: -16vw; //??? sett inni en parent i stedet? Da blir denne også festet...
+	}
+
+	.tittel {
+		margin-top: -30vw;
+	}
+
+	.tittel img:first-of-type {
+		left: -5vw;
+		top: 40vw;
+		width: 40vw;
+				@include breakpoint ($stor-skjerm) {
+				    left: -10vw;
+				    top: 20vw;
+				    width: 31vw;
+				}
+	}
+	.tittel img:last-of-type {
+		right: -50vw;
+		bottom: 22vw;
+		width: 50vw;
+				@include breakpoint ($stor-skjerm) {
+				    bottom: 27vw;
+				    right: -54vw;
+				    width: 41vw;
+				}
+	}
+
+	.ingress p { max-width: 100%; margin-left: 0;
+				@include breakpoint ($skjerm) {
+				line-height: 1.25;
+				}
+			}
+
+	.ingress p {
+		@include breakpoint ($skjerm) {
+		//padding: 0 4rem;
+		}
+	}
+	.ingress img:first-of-type {
+		left: -5vw;
+		top: -83vw;
+		width: 40vw;
+				@include breakpoint ($stor-skjerm) {
+					left: -5vw;
+					top: -83vw;
+					width: 31vw;
+				}
+	}
+
+
+	.ingress img:last-of-type {
+		//right: -60%;
+		//bottom: 40vw;
+		//width: 70%;
+		//width: 40vw;
+		//
+		bottom: 52vw;
+		right: -49vw;
+		width: 50vw;
+				@include breakpoint ($stor-skjerm) {
+				    bottom: 36vw;
+				    right: -59vw;
+				    width: 41vw;
+				}
+	}
+
+	.classrooms {
+		margin-top: -50vw;
+
+			img:first-of-type {
+					top:5rem;
+					left: -10vw;
+				@include breakpoint ($skjerm) {
+					top:20rem;
+				}
+			}
+}
+
+	.statistics {
+		margin-top: 5rem;
+		padding-bottom: 5rem;
+
+			p {
+				@include breakpoint ($skjerm) {
+				margin-left: 20vw;
+				}
+			}
+
+			h2:first-of-type {
+				left: -40vw;
+			}
+			h2:last-of-type {
+				display: none;
+				//margin-top: 7.6rem;
+				@include breakpoint ($skjerm) {
+				display: block;
+				left: 60vw;
+				}
+			}
+
+	img:first-of-type {
+		left: -30vw;
+		top: 10vw;
+		width: 50vw;
+			@include breakpoint ($skjerm) {
+				left: -30vw;
+				top: 20vw;
+				width: 97vw;
+			}
+	}
+
+	img:last-of-type {
+		right: -60%;
+		bottom: 30vw;
+		width: 70%;
+		width: 40vw;
+			@include breakpoint ($skjerm) {
+				left: 80vw;
+				bottom: 20vw;
+				width: 97vw;
+			}
+
+	}
+
+	}
+}
+
+
+
+/* ==|====================
+   QUOTES
+   ======================= */
+
+
+.quotes {
+	background: green;
+}
+
+
+
+
+
+
+
+
+/* ==|====================
+   MANS WORLD
+   ======================= */
+
+.its-a-mans-world {
+	background-color: #FFFF00!important; overflow: hidden;
+
+	article {
+		background-color: #FFFF00!important; overflow: hidden;}
+		height: auto;
+		//overflow-x: hidden;
+		//width: 300px;
+
+	p {
+		@include breakpoint ($skjerm) {
+		margin-left: 50vw;
+		}
+	}
+
+	img {
+		width: 50%;
+	}
+
+	.cover {
+
+	}
+
+	h2.utenparent {
+		left: 59vw;
+   		margin-top: -16vw; //??? sett inni en parent i stedet? Da blir denne også festet...
+	}
+
+
+//tittel
+	.tittel {
+		text-align: center;
+		font-size: 12vw;
+		//height: 100vh;
+		//margin-top: -30vw;
+		//margin-bottom: 40vw;
+		//margin-top: 9vw;
+		margin-bottom: 0;
+
+	}
+	.tittel img:first-of-type {
+		left: -25%;
+		left: -15vw;
+		top: 7rem;
+		top: 24vw;
+		width: 70%;
+		width: 40vw;
+	}
+	.tittel img:last-of-type {
+		right: -60%;
+		right: -50vw;
+		bottom: 6rem;
+		bottom: 22vw;
+		width: 70%;
+		width: 50vw;
+	}
+
+//ingress
+
+	.ingress {
+		//margin-bottom: -15vw;
+		margin-bottom: 25vw;
+	}
+	.ingress p {
+		max-width: 100%;
+		margin-left: 0;
+		margin-bottom: 40vw;
+			@include breakpoint ($skjerm) {
+			line-height: 1.25;
+			//padding: 0 4rem;
+			}
+	}
+
+	.ingress img:first-of-type {
+    left: -15%;
+    top: 19vw;
+    width: 30vw;
+	}
+	.ingress img.bilde-2 {
+	position: absolute;
+	right: 12vw;
+	bottom: -8vw;//-15vw;
+	width: 20vw;
+	}
+	.ingress img:last-of-type {
+    position: absolute;
+    right: -20vw;
+    top: 14vw;
+    transform: scaleY(-1);
+    width: 52vw;
+	}
+
+//side 3
+	.post-feminist {
+		margin-top: 5rem;
+
+			p {
+				@include breakpoint ($skjerm) {
+				margin-left: 20vw;
+				}
+			}
+
+			h2:first-of-type {
+				left: -40vw;
+			}
+			h2:last-of-type {
+				display: none;
+				//margin-top: 7.6rem;
+				@include breakpoint ($skjerm) {
+				display: block;
+				left: 60vw;
+				}
+			}
+
+	img:first-of-type {
+		left: -30vw;
+		top: 10vw;
+		width: 50vw;
+			@include breakpoint ($skjerm) {
+				left: -30vw;
+				top: 20vw;
+				width: 97vw;
+			}
+	}
+
+	img:last-of-type {
+		right: -60%;
+		bottom: 30vw;
+		width: 70%;
+		width: 40vw;
+			@include breakpoint ($skjerm) {
+				left: 80vw;
+				bottom: 20vw;
+				width: 97vw;
+			}
+		}
+	}
+
+//side 4
+	.reflecting {
+		p {
+			top: 10vw;
+			margin-left: 10vw;
+		}
+	}
+
+//side 5
+	.bilder {
+		top: 20vw;
+		padding-top:9vw;
+		margin: auto;
+	    max-width: 1200px;
+	    overflow: hidden;
+		img {
+	    margin: 0 auto;
+	    width: 100%!important;
+		}
+		img:last-of-type {
+	    padding-top:10%;
+	    //left: 25%;
+	    margin: 0 auto;
+	    max-width: 50%;
+		}
+	}
+
+//side 6
+	.vigilant-voices {
+		margin-top: 6rem;//10vw;
+
+			p {
+				@include breakpoint ($nettbrett) {
+				left: 25vw;
+				}
+				@include breakpoint ($skjerm) {
+				left: 10vw;
+				}
+			}
+
+			img:first-of-type {
+				left: -30vw;
+				top: 10vw;
+				width: 50vw;
+					@include breakpoint ($nettbrett) {
+					left: -10vw;
+						}
+					@include breakpoint ($skjerm) {
+				    left: 12vw;
+				    top: 20vw;
+				    width: 50vw;
+						}
+				}
+			img.bilde-2 {
+				left: -40vw;
+				position: absolute;
+				bottom: 65vw;
+				width: 50vw;
+					@include breakpoint ($nettbrett) {
+					bottom: 39vw;
+					left: -15vw;
+					position: absolute;
+					width: 35vw;
+						}
+					@include breakpoint ($skjerm) {
+				    left: 1vw;
+				    position: absolute;
+				    top: 65vw;
+				    width: 39vw;
+						}
+				}
+			img:last-of-type {
+				right: -60%;
+				bottom: 30vw;
+				width: 20vw;
+					@include breakpoint ($nettbrett) {
+					bottom: -5vw;
+				    left: 72vw;
+				    width: 12vw;
+					}
+					@include breakpoint ($skjerm) {
+				    bottom: -5vw;
+				    left: 72vw;
+				    width: 12vw;
+					}
+				}
+
+
+	}
+
+
+	//side 6
+		.kahlo {
+			width: 100%;
+    		margin: 20vw 25%;
+    		-webkit-filter: none;
+		    //margin: 20vw 0;
+		    //width: 200%;
+		    @include breakpoint ($nettbrett) {
+    			width: 100%;
+    			margin: 20vw 25%;
+			}
+
+    		img {
+				max-width: 1000px;
+			}
+		}
+
+
+
+}
+
+
+
+/* ==|====================
+   DICKTIONARY
+   ======================= */
+
+.dicktionary {
+	img {opacity: 1;}
+	//background: #fffff5;
+
+	.ikkeslider {
+   	padding: 2rem;
+	margin-top: 2rem;
+				//@include breakpoint($skjerm) {
+				//min-height: 1524px!important;
+				//padding-bottom: 10rem!important;
+				//}
+	}
+
+	.slides>div {
+		//width: 80%; margin:0 10%;
+		padding: 2rem 2rem 10rem 2rem;
+		//margin-bottom: 10rem;
+	}
+	article {
+		overflow: hidden;
+		background: lightyellow;
+		background: #fff;
+		color: #000;
+		//color: #0022DD;
+		padding: 0;
+		@include breakpoint($nettbrett){
+			padding: 0 2rem;
+		}
+	}
+
+	.dick-slap {
+		min-height: 1200px;
+		//max-height: 2000px;
+		img:first-of-type {
+		//width: 200%;
+		//left: -70%;
+		left: -105%;
+		min-height: 800px;
+		min-width: 1200px;
+		@include breakpoint($nettbrett) {
+			min-height: 0;
+			min-width: 0;
+			width: 100%;
+			left: 0%;
+			}
+		@include breakpoint($skjerm) {
+			width: 89vw;
+			left: 2.5vw;
+			}
+		@include breakpoint($stor-skjerm) {
+			width: 88.6vw;
+			left: 3.5vw;
+			}
+		}
+		img:last-of-type {
+			//padding: 2vw;
+			@include breakpoint($skjerm) {
+			width: 89vw;
+			left: 2.5vw;
+			}
+			@include breakpoint($stor-skjerm) {
+			width: 88.6vw;
+			left: 3.5vw;
+			}
+
+		}
+
+	}
+
+	.bold {
+		overflow: visible;
+		//overflow: hidden;
+		//height: auto;
+		//width: 100vw;
+		//background: url(../img/dicktionary/bear.jpg);
+		//background-size: cover;
+		//padding: 10vw 0;
+		//background-origin: padding-box;
+		//background-repeat: no-repeat;
+		//background-size: 120vw;
+		//img {min-height: 630px; min-width:1800px;
+		img {
+			height: 700px;
+			height: calc(695px + 3rem);
+			width: auto;
+			margin: 0 auto;
+			left: -14rem;
+			@include breakpoint($nettbrett) {
+				min-height: 800px;
+				min-width: 100vw;
+				left: -19vw;
+				}
+			@include breakpoint($skjerm) {
+				width: 104.8vw;
+				height: auto;
+				left: -9.7vw;
+				}
+			}
+	}
+
+	.cockballs {
+		margin: 0 auto 2rem;
+		//width: 130%;
+		width: 85vw;
+		height:auto;
+		//left: -2rem;
+			@include breakpoint($skjerm) {
+				width: 93.4vw;
+				height: auto;
+				left: 0;
+				}
+	}
+
+	.spread {
+		//.ikkeslider {
+		//}
+		img {
+			height: calc(524px + 3rem);
+			width: auto;
+			margin: 0 auto;
+			left: -14rem;
+			@include breakpoint($nettbrett) {
+				width: 98vw;
+				height: auto;
+				left: -2.5vw;
+				}
+			@include breakpoint($skjerm) {
+				width: 93.4vw;
+				height: auto;
+				left: 0;
+				}
+			}
+	}
+
+	.bear {
+		//height: 100vh;
+		//overflow: visible;
+		img {
+			height: calc(706px + 3rem);
+			width: auto;
+			margin: 0 auto;
+			left: -14rem;
+			@include breakpoint($nettbrett) {
+				width: 98vw;
+				height: auto;
+				left: -2.5vw;
+				}
+			@include breakpoint($skjerm) {
+				width: 93.4vw;
+				height: auto;
+				left: 0;
+				}
+			}
+	}
+
+	.muppets {
+			//height: 100vh;
+			overflow: visible;
+			}
+
+
+}

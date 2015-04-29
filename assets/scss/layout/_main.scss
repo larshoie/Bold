@@ -1,0 +1,21 @@
+/* ==|====================
+   Layout/Forside
+   ======================= */
+//nav {display: none;}
+section {width: 100%; height: auto;}
+section img {width: 100%; opacity: 0.5;}
+article {position: absolute;}
+
+
+
+/* ==|====================
+   Layout/Forsider --
+   ======================= */
+
+.teaser {
+	z-index: $bilde;
+	padding: 2rem;
+	article {bottom: 1rem; left: -1rem; z-index: $tekst;}
+	h1 {}
+	img {width: 100%; margin:0; padding: 0;}
+}

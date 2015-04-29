@@ -1,0 +1,268 @@
+/*
+* css Extracted from jQuery Mobile Framework
+* Copyright (c) jQuery Project
+*/
+.spin  {
+        transform: rotate(360deg);
+        animation-name: spin;
+        animation-duration: 1s;
+        animation-iteration-count:  infinite;
+        animation-timing-function: linear;       
+}
+@keyframes spin {
+        from {transform: rotate(0deg);}
+        to {transform: rotate(360deg);}
+}
+
+/* Transitions from jQtouch (with small modifications): http://www.jqtouch.com/
+Built by David Kaneda and maintained by Jonathan Stark.
+*/
+.in, .out {
+        animation-timing-function: ease-in-out;
+        animation-duration: 705ms;
+}
+
+
+.slide.out {
+        transform: translateX(-100%);
+        animation-name: slideouttoleft;
+}
+
+.slide.in {
+        transform: translateX(0);
+        animation-name: slideinfromright;
+}
+
+.slide.out.reverse {
+        transform: translateX(100%);
+        animation-name: slideouttoright;
+}
+
+.slide.in.reverse {
+        transform: translateX(0);
+        animation-name: slideinfromleft;
+}
+
+.slideup.out {
+        animation-name: dontmove;
+        z-index: 0;
+}
+
+.slideup.in {
+        transform: translateY(0);
+        animation-name: slideinfrombottom;
+        z-index: 10;
+}
+
+.slideup.in.reverse {
+        z-index: 0;
+        animation-name: dontmove;
+}
+
+.slideup.out.reverse {
+        transform: translateY(100%);
+        z-index: 10;
+        animation-name: slideouttobottom;
+}
+
+.slidedown.out {
+        animation-name: dontmove;
+        z-index: 0;
+}
+
+.slidedown.in {
+        transform: translateY(0);
+        animation-name: slideinfromtop;
+        z-index: 10;
+}
+
+.slidedown.in.reverse {
+        z-index: 0;
+        animation-name: dontmove;
+}
+
+.slidedown.out.reverse {
+        transform: translateY(-100%);
+        z-index: 10;
+        animation-name: slideouttotop;
+}
+
+@keyframes slideinfromright {
+    from { transform: translateX(100%); }
+    to { transform: translateX(0); }
+}
+
+@keyframes slideinfromleft {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(0); }
+}
+
+@keyframes slideouttoleft {
+    from { transform: translateX(0); }
+    to { transform: translateX(-100%); }
+}
+
+@keyframes slideouttoright {
+    from { transform: translateX(0); }
+    to { transform: translateX(100%); }
+}
+
+@keyframes slideinfromtop {
+    from { transform: translateY(-100%); }
+    to { transform: translateY(0); }
+}
+
+@keyframes slideinfrombottom {
+    from { transform: translateY(100%); }
+    to { transform: translateY(0); }
+}
+
+
+
+@keyframes slideouttobottom {
+    from { transform: translateY(0); }
+    to { transform: translateY(100%); }
+}
+
+@keyframes slideouttotop {
+    from { transform: translateY(0); }
+    to { transform: translateY(-100%); }
+}
+@keyframes fadein {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeout {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+.fade.out {
+        z-index: 0;
+        animation-name: fadeout;
+}
+
+.fade.in {
+        opacity: 1;
+        z-index: 10;
+        animation-name: fadein;
+}
+
+/* The properties in this rule are only necessary for the 'flip' transition.
+ * We need specify the perspective to create a projection matrix. This will add
+ * some depth as the element flips. The depth number represents the distance of
+ * the viewer from the z-plane. According to the CSS3 spec, 1000 is a moderate
+ * value.
+ */
+.viewport-flip {
+        perspective: 1000;
+        position: absolute;
+}
+
+.ui-mobile-viewport-transitioning,
+.ui-mobile-viewport-transitioning .ui-page {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+}
+
+.flip {
+        animation-duration: .65s;
+        backface-visibility:hidden;
+        transform:translateX(0); /* Needed to work around an iOS 3.1 bug that causes listview thumbs to disappear when visibility:hidden is used. */
+}
+
+.flip.out {
+        transform: rotateY(-180deg) scale(.8);
+        animation-name: flipouttoleft;
+}
+
+.flip.in {
+        transform: rotateY(0) scale(1);
+        animation-name: flipinfromleft;
+}        
+/* Shake it all about */
+
+.flip.out.reverse {
+        transform: rotateY(180deg) scale(.8);
+        animation-name: flipouttoright;
+}
+
+.flip.in.reverse {
+        transform: rotateY(0) scale(1);
+        animation-name: flipinfromright;
+}
+
+@keyframes flipinfromright {
+    from { transform: rotateY(-180deg) scale(.8); }
+    to { transform: rotateY(0) scale(1); }
+}
+
+@keyframes flipinfromleft {
+    from { transform: rotateY(180deg) scale(.8); }
+    to { transform: rotateY(0) scale(1); }
+}
+
+@keyframes flipouttoleft {
+    from { transform: rotateY(0) scale(1); }
+    to { transform: rotateY(-180deg) scale(.8); }
+}
+
+@keyframes flipouttoright {
+    from { transform: rotateY(0) scale(1); }
+    to { transform: rotateY(180deg) scale(.8); }
+}
+
+
+/* Hackish, but reliable. */
+
+@keyframes dontmove {
+    from { opacity: 1; }
+    to { opacity: 1; }
+}
+
+.pop {
+        transform-origin: 50% 50%;
+}
+
+.pop.in {
+        transform: scale(1);
+	    opacity: 1;
+        animation-name: popin;
+        z-index: 10;
+}
+
+.pop.in.reverse {
+        z-index: 0;
+        animation-name: dontmove;
+}
+
+.pop.out.reverse {
+        transform: scale(.2);
+        opacity: 0;
+        animation-name: popout;
+        z-index: 10;
+}
+
+@keyframes popin {
+    from {
+        transform: scale(.2);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes popout {
+    from {
+        transform: scale(1);
+        opacity: 1;
+    }
+    to {
+        transform: scale(.2);
+        opacity: 0;
+    }
+}
